@@ -1,0 +1,5 @@
+<form action="/articles/<%= article.id %>/edit" method="post">
+Title: <input type="text" value="<%= article.title %>" name='title'>
+Description: <input type="text" value="<%= article.description %>" name='description'>
+Tags: <input type="text" value=<%= [...article.tags] %> name='tags'>
+</form>

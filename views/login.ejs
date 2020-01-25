@@ -1,0 +1,10 @@
+<% if(msg) { %>
+  <p><%= msg %></p>
+<% } %> 
+
+<a href="/articles">Articles</a>
+<form action="/articles/login" method='post'>
+Email <input type="email" name="email">
+Password <input type="password" name='password'>
+<input type="submit" value='Login'>
+</form>

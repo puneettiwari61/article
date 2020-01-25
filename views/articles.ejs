@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <p><%=msg%></p>
+    <% if(user){ %>
+     <p> Welcome <%= user.username %> <a href="/articles/logout">Logout</a>
+     </p>
+    <%} else {%>
+      <p> please login <a href="/articles/login">Login</a><a href="/articles/register">Register</a><br>
+      </p>
+      <%}%>
+<h1><a href="/articles/create">Create New Article</a></h1>
+<div><% articles.forEach(article => { %>
+  <div class="flex hundred">
+  <h1 class="fix"><a href='/articles/<%= article.id %>/read'><%= article.title %><br>Author <span style="padding-left:10px;"><%=article.author.username%></span></a>
+  </h1>
+  <div class="padding"><a href="/articles/<%= article.id %>/likes"><%= article.likes %> Likes</a>
+  <a href="/articles/<%= article.id %>/delete">Delete</a>
+  <a href="/articles/<%= article.id %>/edit">Edit</a></div>
+</div>
+<hr>
+<% }) %> </div>
+</body>
+</html>

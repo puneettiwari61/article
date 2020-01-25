@@ -1,0 +1,20 @@
+<h1><%= article.title %></h1>
+  <h2><%= article.description %></h2>
+  <h3><%= article.tags %></h3>
+  <a href="/articles">All Articles</a>
+  <% if(user){ %>
+    <p>   <a href="/articles/<%= article.id %>/delete">Delete</a>
+      <a href="/articles/<%= article.id %>/edit">Edit</a> %></p>
+      <a href="/articles/logout">Logout</a>
+   <%} else {%>
+     <p> please login to comment or like </p>
+     <%}%>
+  <div>
+    <% article.comments.forEach(c => { %>
+    <h4><%= c.comment %></h4>
+    <% }) %>
+  </div>
+  <form action="/articles/<%= article.id %>/comments" method="post">
+  <input type="text" name="comment">
+  <input type="submit" value="Comment">
+  </form>
