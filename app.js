@@ -9,7 +9,7 @@ var session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 var middleware = require('./modules/middleware')
 //connecting to database 
-mongoose.connect('mongodb://localhost/sample',{ useNewUrlParser: true,
+mongoose.connect('mongodb://uyfexi7yktegd9zbusm3:EPr5L5Lhb2fFimyTh3fT@bzddcpiz6r7ngo5-mongodb.services.clever-cloud.com:27017/bzddcpiz6r7ngo5',{ useNewUrlParser: true,
 useUnifiedTopology: true },(err) => {
   console.log('connected',err?false:true);
 })
